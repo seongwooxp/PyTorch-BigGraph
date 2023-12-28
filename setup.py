@@ -13,14 +13,14 @@ from torch.utils import cpp_extension
 
 
 if __name__ == "__main__":
-    if int(os.getenv("PBG_INSTALL_CPP", 0)) == 0:
-        setup()
-    else:
-        setup(
-            ext_modules=[
-                cpp_extension.CppExtension(
-                    "torchbiggraph._C", ["torchbiggraph/util.cpp"]
-                )
-            ],
-            cmdclass={"build_ext": cpp_extension.BuildExtension},
-        )
+    #if int(os.getenv("PBG_INSTALL_CPP", 0)) == 0:
+    #    setup()
+    #else:
+    setup(
+        ext_modules=[
+            cpp_extension.CppExtension(
+                "torchbiggraph._C", ["torchbiggraph/util.cpp"]
+            )
+        ],
+        cmdclass={"build_ext": cpp_extension.BuildExtension},
+    )
