@@ -28,6 +28,12 @@ from torchbiggraph.util import allocate_shared_tensor, CouldNotLoadData, div_rou
 
 logger = logging.getLogger("torchbiggraph")
 
+#ksw- Custom code for Buffer-Size
+CUSTOM_BUFFER_SIZE=None
+def set_custom_buffer_size(custom_size):
+    global CUSTOM_BUFFER_SIZE
+    CUSTOM_BUFFER_SIZE = custom_size
+#ksw- Custom code for Buffer-Size
 
 class AbstractEntityStorage(ABC):
     @abstractmethod
