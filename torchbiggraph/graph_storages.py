@@ -274,6 +274,11 @@ class BufferedDataset:
 
     def __init__(self, hf: h5py.File, dataset_name: str) -> None:
         self.hf: h5py.File = hf
+        
+        #ksw- Custom code for Buffer-Size
+        self.BUFFER_SIZE=CUSTOM_BUFFER_SIZE
+        #ksw- Custom code for Buffer-Size
+        
         self.dataset_name: str = dataset_name
         self.dataset: h5py.Dataset = self.hf.create_dataset(
             name=self.dataset_name,
@@ -287,10 +292,6 @@ class BufferedDataset:
         )
         self.buffer_offset: int = 0
         self.total_data: int = 0
-        
-        #ksw- Custom code for Buffer-Size
-        self.BUFFER_SIZE=CUSTOM_BUFFER_SIZE
-        #ksw- Custom code for Buffer-Size
 
     def flush_buffer(self, _last: bool = False) -> None:
         if not _last:
