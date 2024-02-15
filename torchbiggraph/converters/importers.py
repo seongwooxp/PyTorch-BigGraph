@@ -26,9 +26,14 @@ from torchbiggraph.graph_storages import (
     EDGE_STORAGES,
     ENTITY_STORAGES,
     RELATION_TYPE_STORAGES,
+    set_custom_buffer_size,
 )
 from torchbiggraph.types import UNPARTITIONED
 
+#ksw- Custom code for Buffer-Size
+def set_custom_buffer(custom_buffer_size):
+    set_custom_buffer_size(custom_buffer_size)
+#ksw- Custom code for Buffer-Size
 
 def log(msg):
     print(f"[{datetime.datetime.now()}] {msg}", flush=True)
