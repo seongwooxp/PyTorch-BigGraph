@@ -17,6 +17,9 @@ if __name__ == "__main__":
     #    setup()
     #else:
     setup(
+        install_requires=[
+            'torch==2.0.0'
+        ],
         ext_modules=[
             cpp_extension.CppExtension(
                 "torchbiggraph._C", ["torchbiggraph/util.cpp"]
