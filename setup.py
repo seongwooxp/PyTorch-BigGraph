@@ -7,13 +7,16 @@
 # LICENSE.txt file in the root directory of this source tree.
 
 import os
+import torch
 
 from setuptools import setup
 from torch.utils import cpp_extension
 
 
 if __name__ == "__main__":
-    if int(os.getenv("PBG_INSTALL_CPP", 0)) == 0:
+    #if int(os.getenv("PBG_INSTALL_CPP", 0)) == 0:
+    #    setup()
+    if torch.cuda.is_available() == 0:
         setup()
     else:
         setup(
